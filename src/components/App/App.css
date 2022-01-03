@@ -1,0 +1,8 @@
+main {
+  height: 100vh;
+  width: 100vw;
+  background-color: aquamarine;
+  /* background-image: url('../../images/wallpaper.jpeg');
+  background-repeat: repeat; */
+  overflow: scroll;
+}
