@@ -1,29 +1,26 @@
-nav {
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
   background-color: rgb(98, 184, 155);
 }
 
 .quiz-me-logo {
   max-width: 75vw;
-  max-height: 16vh;
-}
-
-.menu-container {
-  position: relative;
+  max-height: 14vh;
 }
 
 .menu {
   background: #ffffff;
   border-radius: 8px;
   position: absolute;
-  top: 60px;
+  top: 45px;
   right: 0;
-  width: 300px;
+  margin-right: 5px;
+  width: 200px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
@@ -54,39 +51,33 @@ nav {
   display: block;
 }
 
-.menu-trigger {
-  background: #ffffff;
-  border-radius: 90px;
+.menu-button {
+  border-radius: 13px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   border: none;
   vertical-align: middle;
   transition: box-shadow 0.4s ease;
+  height: 30px;
+  right: 0;
+  top: 0;
+  margin: .25em;
+  position: fixed;
 }
 
-.menu-trigger:hover {
+.menu-button:hover {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-.menu-trigger span {
+.menu-button span {
   font-weight: 700;
   vertical-align: middle;
   font-size: 14px;
   margin: 0 10px;
 }
 
-.menu-trigger img {
+.menu-button img {
   border-radius: 90px;
-}
-
-.menu-button {
-  height: 30px;
-  right: 0;
-  top: 0;
-  margin: .25em;
-  position: fixed;
 }

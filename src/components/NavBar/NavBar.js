@@ -27,9 +27,7 @@ const NavBar = () => {
   return (
     <header>
       <div className='menu-container'>
-        <button onClick={onClick} className='menu-trigger'>
-          <img src={ menuButton } className='menu-button' alt='menu button'></img>
-        </button>
+        <img src={ menuButton } onClick={onClick} className='menu-button' alt='menu button'></img>
         <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
           <ul>
             <li><a href='/Instructions'>Instructions</a></li>
