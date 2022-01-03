@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+  background-color: rgb(98, 184, 155);
+}
+
+.quiz-me-logo {
+  max-width: 70vw;
+  max-height: 18vh;
+  margin-bottom: 2vh;
+}
+
+.menu-button {
+  height: 30px;
+  right: 0;
+  top: 0;
+  margin: .25em;
+  position: fixed;
+}
