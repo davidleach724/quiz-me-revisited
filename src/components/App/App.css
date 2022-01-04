@@ -4,5 +4,5 @@ main {
   background-color: aquamarine;
   /* background-image: url('../../images/wallpaper.jpeg');
   background-repeat: repeat; */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
