@@ -1,5 +1,12 @@
 .home-container {
   width: 100vw;
+  overflow: scroll;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button-container {
