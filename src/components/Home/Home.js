@@ -5,6 +5,7 @@ import hardBtn from '../../images/hard_btn.png'
 import { useState } from 'react/cjs/react.development'
 import { useEffect } from 'react'
 import { fetchCategories } from '../../api calls/apicalls'
+import Categories from '../Categories/Categories'
 
 const Home = () => {
   const [difficulty, setDifficulty] = useState(null)
@@ -14,7 +15,6 @@ const Home = () => {
     if (categories === null) {
       fetchCategories()
       .then(data => setCategories(data.trivia_categories))
-      .then(data => console.log(data))
     }
   })
 
@@ -23,7 +23,7 @@ const Home = () => {
     <div className='home-container'>
       <div className='category-container'>
         <h3>Select A Category</h3>
-        {categories && <h3>CATEGORY DROPDOWN</h3>}
+        {categories && <Categories categoryData={ categories }/>}
       </div>
       <div className='button-container'>
         <img src={ easyBtn } className='difficulty-button' onClick={() => setDifficulty('EASY')}></img>
