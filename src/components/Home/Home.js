@@ -2,16 +2,16 @@ import './Home.css';
 import easyBtn from '../../images/easy_btn.png';
 import mediumBtn from '../../images/medium_btn.png';
 import hardBtn from '../../images/hard_btn.png';
-import submitBtn from '../../images/submit_btn.png'
+import submitBtn from '../../images/submit_btn.png';
 import { useState } from 'react/cjs/react.development';
 import { useEffect } from 'react';
-import { fetchCategories } from '../../api calls/apicalls';
+import { fetchCategories, fetchQuestions } from '../../api calls/apicalls';
 import Categories from '../Categories/Categories';
 
 const Home = () => {
   const [difficulty, setDifficulty] = useState('EASY');
   const [categories, setCategories] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('General Knowledge');
+  const [selectedCategory, setSelectedCategory] = useState({id: 9, name:'General Knowledge'});
 
   useEffect(() => {
     if (categories === null) {
@@ -20,7 +20,8 @@ const Home = () => {
   });
 
   const handleCategoryChange = (category) => {
-    return setSelectedCategory(category);
+    let catID = categories.find(cat => cat.name === category)
+    return setSelectedCategory(catID);
   };
 
   return (
@@ -51,14 +52,14 @@ const Home = () => {
           onClick={() => setDifficulty('HARD')}
         ></img>
       </div>
-        {difficulty && selectedCategory && (
-          <div className="lets-play-container">
-            <h3>
-              YOU SELECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}
-            </h3>
-            <img src={ submitBtn } className='submit-button'></img>
-          </div>
-        )}
+      {difficulty && selectedCategory && (
+        <div className="lets-play-container">
+          <h3>
+            YOU SELECTED {selectedCategory.name.toUpperCase()} LEVEL {difficulty}
+          </h3>
+          <img src={submitBtn} className="submit-button" onClick={() => fetchQuestions(selectedCategory.id, difficulty).then(data => console.log(data))}></img>
+        </div>
+      )}
     </div>
   );
 };
