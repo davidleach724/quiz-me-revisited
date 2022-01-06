@@ -9,9 +9,9 @@ import { fetchCategories } from '../../api calls/apicalls';
 import Categories from '../Categories/Categories';
 
 const Home = () => {
-  const [difficulty, setDifficulty] = useState(null);
+  const [difficulty, setDifficulty] = useState('EASY');
   const [categories, setCategories] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('General Knowledge');
 
   useEffect(() => {
     if (categories === null) {
@@ -54,7 +54,7 @@ const Home = () => {
         {difficulty && selectedCategory && (
           <div className="lets-play-container">
             <h3>
-              YOU SLECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}
+              YOU SELECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}
             </h3>
             <img src={ submitBtn } className='submit-button'></img>
           </div>
