@@ -2,6 +2,7 @@ import './Home.css';
 import easyBtn from '../../images/easy_btn.png';
 import mediumBtn from '../../images/medium_btn.png';
 import hardBtn from '../../images/hard_btn.png';
+import submitBtn from '../../images/submit_btn.png'
 import { useState } from 'react/cjs/react.development';
 import { useEffect } from 'react';
 import { fetchCategories } from '../../api calls/apicalls';
@@ -50,13 +51,14 @@ const Home = () => {
           onClick={() => setDifficulty('HARD')}
         ></img>
       </div>
-      <div className="lets-play-container">
         {difficulty && selectedCategory && (
-          <h3>
-            YOU SLECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}
-          </h3>
+          <div className="lets-play-container">
+            <h3>
+              YOU SLECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}
+            </h3>
+            <img src={ submitBtn } className='submit-button'></img>
+          </div>
         )}
-      </div>
     </div>
   );
 };
