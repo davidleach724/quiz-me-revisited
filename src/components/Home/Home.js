@@ -10,6 +10,7 @@ import Categories from '../Categories/Categories'
 const Home = () => {
   const [difficulty, setDifficulty] = useState(null)
   const [categories, setCategories] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(null)
 
   useEffect(() => {
     if (categories === null) {
@@ -18,12 +19,16 @@ const Home = () => {
     }
   })
 
+  const handleCategoryChange = (category) => {
+    return setSelectedCategory(category)
+  }
+
   
   return (
     <div className='home-container'>
       <div className='category-container'>
         <h3>Select A Category</h3>
-        {categories && <Categories categoryData={ categories }/>}
+        {categories && <Categories categoryData={ categories } handleCategoryChange={handleCategoryChange}/>}
       </div>
       <div className='button-container'>
         <img src={ easyBtn } className='difficulty-button' onClick={() => setDifficulty('EASY')}></img>
@@ -31,7 +36,9 @@ const Home = () => {
         <img src={ hardBtn } className='difficulty-button' onClick={() => setDifficulty('HARD')}></img>
       </div>
       <div className='lets-play-container'>
-        <h3>YOU SLECTED ____ LEVEL {difficulty}</h3>
+        {(difficulty && selectedCategory) && 
+        <h3>YOU SLECTED {selectedCategory.toUpperCase()} LEVEL {difficulty}</h3>
+        }
       </div>
     </div>
   )
