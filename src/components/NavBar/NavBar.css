@@ -64,7 +64,7 @@ header {
   right: 0;
   top: 0;
   margin: .25em;
-  position: fixed;
+  position: absolute;
 }
 
 .menu-button:hover {
