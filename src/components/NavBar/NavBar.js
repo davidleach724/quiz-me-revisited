@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 const NavBar = () => {
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
+  
   const onClick = () => setIsActive(!isActive);
 
   useEffect(() => {

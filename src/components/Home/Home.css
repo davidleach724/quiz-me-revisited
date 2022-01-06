@@ -1,0 +1,41 @@
+.home-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  background-color: aquamarine;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.difficulty-button {
+  width: 100px;
+  margin: 4px;
+}
+
+.difficulty-button:hover {
+  transform: translateY(5px);
+}
+
+.lets-play-container {
+  text-align: center;
+}
+
+.submit-button {
+  width: 120px;
+  margin: 5px;
+}
+
+.submit-button:hover {
+  transform: translateY(5px);
+}
