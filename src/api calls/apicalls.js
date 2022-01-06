@@ -4,6 +4,12 @@ export const fetchCategories = () => {
   .catch(error => console.log(error))
 }
 
+export const fetchQuestions = (categoryID, difficulty) => {
+  return fetch(`https://opentdb.com/api.php?amount=10&category=${categoryID}&difficulty=${difficulty}`)
+  .then(response => checkError(response))
+  .catch(error => console.log(error))
+}
+
 const checkError = (res) => {
   if (!res.ok) {
     throw new Error(
