@@ -24,6 +24,14 @@ const Home = () => {
     return setSelectedCategory(catID);
   };
 
+  const responseStatus = (response) => {
+    if (response.response_code === 0) {
+      return window.location.href = "/Questions"
+    } else {
+      return window.alert('Sorry, not enough data for chosen category')
+    }
+  }
+
   return (
     <div className="home-container">
       <div className="category-container">
@@ -57,7 +65,7 @@ const Home = () => {
           <h3>
             YOU SELECTED {selectedCategory.name.toUpperCase()} LEVEL {difficulty}
           </h3>
-          <img src={submitBtn} className="submit-button" onClick={() => fetchQuestions(selectedCategory.id, difficulty).then(data => console.log(data))}></img>
+          <img src={submitBtn} className="submit-button" onClick={() => fetchQuestions(selectedCategory.id, difficulty).then(data => responseStatus(data))}></img>
         </div>
       )}
     </div>

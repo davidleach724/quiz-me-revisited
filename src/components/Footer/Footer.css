@@ -5,7 +5,7 @@ footer {
   height: 20px;
   background-color: rgb(99, 196, 164);
   width: 100vw;
-  position: inherit;
+  position: absolute;
   bottom: 0;
 }
 
