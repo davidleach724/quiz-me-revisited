@@ -28,7 +28,7 @@ const Home = () => {
     if (response.response_code === 0) {
       return window.location.href = "/Questions"
     } else {
-      return console.log('nope')
+      return window.alert('Sorry, not enough data for chosen category')
     }
   }
 
